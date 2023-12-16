@@ -1,0 +1,6 @@
+;;-*-coding: utf-8;-*-
+(define-abbrev-table 'global-abbrev-table
+  '(
+    ("mn" "mente" nil :count 4)
+   ))
+

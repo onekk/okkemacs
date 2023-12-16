@@ -1,0 +1,84 @@
+* Okkemacs
+
+*okkemacs* is a collection of setting for Emacs to ease the transition to Emacs from "Mundane Editors".
+
+Sadly after some years of use of "Mundane Editors" and other software *CTRL-X,* *CTRL-C,* *CTRL-V,* *CTRL-Z,* *CTRL-F, *CTRL-Y* are cast in muscular memory that it is very difficult to change your behaviour.
+
+"Mundane Editors" use some keybindings that "One True Editor" dislike notably *CTRL-X* and *CTRL-C, *CTRL-Y* and *CTRL-F* has a specific means in Emacs.
+
+There are some solutions, but nothing is a perfect one, and neither this is a perfect one.
+
+So I've found a way to move the behaviour of *CTRL-X* and *CTRL-C* to a different keybindings with a package, but as many other packages it is quite invasive, modifying eve other things, like the usual Emacs command for movements and similar things.
+
+So probably best approach is to restrict the "common key press" to those strictly necessary avoid conflicts and to satisfy muscular memory.
+
+So I've solved to achieve a mixed approach:
+
+  + *CTRL-C* is translated to *CTRL-D*
+  + *CTRL-X* is translated to *CTRL-W*
+
+  This is sufficient to have the usual keys to make cut copy and paste, plus undo and redo, so you have these shortcuts:
+
+  + *CTRL-X* to cut
+  + *CTRL-C* to copy
+  + *CTRL-V* to paste
+  + *CTRL-Z* to undo using *undo-fu-only-undo*
+  + *CTRL-Y* to redo using *undo-fu-only-redo*
+  + *CTRL-SHIFT-Z* to invoke the standard Emacs function *undo-redo* that some find broken
+
+Note the absence of the dedicated shortcuts:
+
+  + *CTRL-O* to open a file
+  + *CTRL-S* to save a file
+  + *CTRL-F* to start the search
+
+With these choices you have the standard Emacs behavior to start search:
+
+  + *CTRL-S* to start a search forward
+  + *CTRL-R* to start a search backward
+
+And the usual movement commands:
+
+  + *CTRL-F* to move a character forward
+  + *CTRL-B* to move a character backward
+
+This will ease the mnemonics for other movement relate to word that are bound to *Meta-B*
+ and *Meta-F*.
+
+ 
+Some may think that is a mess, but it is a precise design choice, as there are many documentation around that use the standard Emacs shortcuts, so changing them will means that you are left in a "undefined state" as soon you exit the standard text editing, having the doubt that the solution is worse than the problem.
+
+Side effects is that you have to remeber only two things:
+
+  + the minimal substitution map cited above
+  + the new *special prefix keys* :
+    + *CTRL-D* instead of *CTRL-C*
+    + *CTRL-W* instead of *CTRL-X*
+
+I have ignored every other considerations about ergonomics, as probably the best solution is to take some pauses from the work, and use a decent keyboard, plus make some exercises.
+
+To ease the use of the new buttons, there are many extensions, I have decided to use *which-keys* that will open a window on the bottom of the screen (it is configurable, if you know what you are doing) and will tell you what key combination after the prefix key is available.
+
+This will greatly ease the use of the new keybindings, as you have a reminder on the lower part of the screen.
+
+This work is my first big Emacs project, so feel free to make comments and questions and even proposal on how to improve it.
+
+* Notes:
+
++ CheatSheet is not updated yet.
++ *keymap.org* is updated but not verified yet. It should be almost correct.
+
+* Donations
+
+You could help the development, making a little donation at:
+
+[[https://paypal.me/FCSguidait?locale.x=en_EN][PayPalMe]]
+
+* Blog
+
+[[https://okkmkblog.wordpress.com/][English language Blog]]
+
+Regards
+
+Carlo D.
+

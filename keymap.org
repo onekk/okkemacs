@@ -1,0 +1,373 @@
+# -**-  mode:org; time-stamp-format: "%Y-%m-%d %H:%M:%S" -**-
+#+TITLE: OKK Keymap
+#+AUTHOR: Carlo Dormeletti
+#+EMAIL: carlo.dormeletti@gmail.com
+#+DATE: Time-stamp: <2023-12-08 13:16:07 carlo-arch>
+
+* Non prefix keybindings
+
+Mod content means:
+  + *E* Emacs original
+  + *O* defined in *okk-keys.el*
+  + *U* Undefined  
+  + * probably could be reused as it is a scarcely used command
+
+  In tables there are keys that belongs to ISO Italian keyboard:
+
+  + *ò* first key after *L*
+  + *à* second key after *L*
+  + *ù* third key after *L*
+  + *ì* second key after *0*
+
+    Obviously if you don't use and ISO Italian keyboard, you should name them to reflect real character present in your keyboard
+
+#+NAME: keymap
+|------------+-------------------------------------+-----+---------------------|
+| Key        | command                             | Mod | old Emacs commands  |
+|------------+-------------------------------------+-----+---------------------|
+| C-1        | digit argument                      | E   |                     |
+| C-2        | ""                                  | E   |                     |
+| C-3        | ""                                  | E   |                     |
+| C-4        | ""                                  | E   |                     |
+| C-5        | ""                                  | E   |                     |
+| C-6        | ""                                  | E   |                     |
+| C-7        | ""                                  | E   |                     |
+| C-8        | ""                                  | E   |                     |
+| C-9        | ""                                  | E   |                     |
+| C-0        | ""                                  | E   |                     |
+| C-'        |                                     | U   |                     |
+| C-ì        |                                     | U   |                     |
+|            |                                     |     |                     |
+| C-a        | smart-move-beginning-of-line        | E   |                     |
+| C-b        | backward-char                       | O   |                     |
+| C-c        | kill-ring-save                      | O   | old prefix key      |
+| C-d        | new  prefix key subst. C-c          | O   | delete-char         |
+| C-e        | move-end-of-line                    | E   |                     |
+| C-f        | forward-char                        | E   |                     |
+| C-g        | keyboard-quit                       | E   |                     |
+| C-h        | help                                | E   |                     |
+| C-i        | indent-for-tab-command              | E * |                     |
+| C-j        | electric-newline-and-maybe-indent   | E * |                     |
+| C-k        | kill-line                           | E   |                     |
+| C-l        | recenter-top-bottom                 | E   |                     |
+| C-m        | newline                             | E * |                     |
+| C-n        | next-line                           | E   |                     |
+| C-o        | open-line                           | E * |                     |
+| C-p        | previous-line                       | E * |                     |
+| C-q        | query-replace                       | O   | quoted-insert       |
+| C-r        | isearch-backward                    | E * |                     |
+| C-s        | isearch-forward                     | E * |                     |
+| C-t        | transpose-chars                     | E   |                     |
+| C-u        | universal-argument                  | E   |                     |
+| C-v        | yank                                | O   | scroll-up-command   |
+| C-S-v      | consult-yank-pop                    | O   |                     |
+| C-w        | new prefix key subst. C-x           | O   | command kill-region |
+| C-z        | undo-fu-only-undo                   | O   | suspend-frame       |
+| C-S-z      | undo-redo                           | O   |                     |
+| C-x        | kill-region                         | O   | old prefix key      |
+| C-y        | undo-fu-only-redo                   | O   | yank                |
+| C-<        | expand abbrev                       | O   |                     |
+| C-+        | text-scale-increase                 | O   |                     |
+| C--        | text-scale-decrease                 | O   |                     |
+| C-;        | comment-line                        | O   |                     |
+| C-.        | mc/mark-next-like-this              | O   |                     |
+| C-,        | mc/mark-previous-like-this          | O   |                     |
+| C-<print>  | print-buffer                        | O   |                     |
+| C-<RET>    | rectangle-mark-mode                 | O   |                     |
+| C-<left>   | left-word                           |     |                     |
+| C-<down>   | undefined                           | *   |                     |
+| C-<right>  | right-word                          |     |                     |
+| C-<up>     | undefined                           | *   |                     |
+| C-<return> | 'rectangle-mark-mode                | O   |                     |
+| C-<insert> | undefined                           | *   |                     |
+| C-<home>   | beginning-of-buffer                 |     |                     |
+| C-<prior>  | previous-buffer                     | O   | scroll-right        |
+| C-<delete> | kill-word                           | E   |                     |
+| C-<end>    | end-of-buffer                       |     |                     |
+| C-<next>   | next-buffer                         | O   | scroll-left         |
+|            |                                     |     |                     |
+| C-ò        |                                     | U   |                     |
+| C-à        |                                     | U   |                     |
+| C-ù        | ispell-word                         | O   |                     |
+|            |                                     |     |                     |
+| C-<kp-1>   | digit argument                      | E   |                     |
+| C-<kp-2>   | ""                                  | E   |                     |
+| C-<kp-3>   | ""                                  | E   |                     |
+| C-<kp-4>   | ""                                  | E   |                     |
+| C-<kp-5>   | ""                                  | E   |                     |
+| C-<kp-6>   | ""                                  | E   |                     |
+| C-<kp-7>   | ""                                  | E   |                     |
+| C-<kp-8>   | ""                                  | E   |                     |
+| C-<kp-9>   | ""                                  | E   |                     |
+| C-<kp-0>   | ""                                  | E   |                     |
+|            |                                     |     |                     |
+|            |                                     |     |                     |
+| M-1        | digit argument                      | E   |                     |
+| M-2        | ""                                  | E   |                     |
+| M-3        | ""                                  | E   |                     |
+| M-4        | ""                                  | E   |                     |
+| M-5        | ""                                  | E   |                     |
+| M-6        | ""                                  | E   |                     |
+| M-7        | ""                                  | E   |                     |
+| M-8        | ""                                  | E   |                     |
+| M-9        | ""                                  | E   |                     |
+| M-0        | ""                                  | E   |                     |
+| M-'        | abbrev-prefix-mark                  | E   |                     |
+| M-ì        |                                     | U   |                     |
+|            |                                     |     |                     |
+| M-a        | backward-sentence                   | E   |                     |
+| M-b        | backward-word                       | E   |                     |
+| M-c        | capitalize-word                     | E   |                     |
+| M-d        | kill-word                           | E   |                     |
+| M-e        | forward-sentence                    | E   |                     |
+| M-f        | forward-word                        | E   |                     |
+| M-g        | prefix                              | E   |                     |
+| M-h        | mark-paragraph                      | E   |                     |
+| M-i        | tab-to-tab-stop                     | E * |                     |
+| M-j        | default-indent-new-line             | E * |                     |
+| M-k        | kill-sentence                       | E   |                     |
+| M-l        | consult-line                        | O   | downcase-word       |
+| M-m        | back-to-indentation                 | E * |                     |
+| M-n        |                                     | U   |                     |
+| M-o        |                                     | U   |                     |
+| M-p        |                                     | U   |                     |
+| M-q        | fill-paragraph                      | E   |                     |
+| M-r        | move-to-window-line-top-bottom      | E * |                     |
+| M-s        | prefix                              | E   |                     |
+| M-t        | transpose-words                     | E   |                     |
+| M-u        | upcase-word                         | E * |                     |
+| M-v        | scroll-down-command (C-v redefined) | E * |                     |
+| M-w        | kill-ring-save (now is C-v)         | E * |                     |
+| M-z        | zap-to-char                         | E * |                     |
+| M-x        | execute-extended-command            | E   |                     |
+| M-y        | yank-pop                            | E * |                     |
+| M-,        | xref-go-back                        | E   |                     |
+| M-.        | xref-find-definitions               | E   |                     |
+| M-;        | comment-dwim                        | E * |                     |
+| M-:        | xref-find-references                | O   | eval-expression     |
+|            |                                     |     |                     |
+| M-ò        | okk-previous                        | O   |                     |
+| M-à        | okk-next                            | O   |                     |
+| M-ù        |                                     | U   |                     |
+| M-è        |                                     | U   |                     |
+| M-+        |                                     | U   |                     |
+| M--        |                                     | U   |                     |
+| M-<        |                                     | U   |                     |
+| M->        |                                     | U   |                     |
+| M-\        | delete-horizontal-space             | E   |                     |
+|            |                                     |     |                     |
+| M-<left>   | left-word                           | E   |                     |
+| M-<down>   |                                     | U   |                     |
+| M-<right>  | right-word                          | E   |                     |
+| M-<up>     |                                     | U   |                     |
+| M-<return> |                                     | U   |                     |
+| M-<insert> |                                     | U   |                     |
+| M-<home>   | beginning-of-buffer-other-window    | E   |                     |
+| M-<prior>  | scroll-other-window-down            | E   |                     |
+| M-<delete> | backward-kill-word                  | E   |                     |
+| M-<end>    | end-of-buffer-other-window          | E   |                     |
+| M-<next>   | scroll-other-window                 | E   |                     |
+|            |                                     |     |                     |
+| M-<kp-1>   |                                     | U   |                     |
+| M-<kp-2>   | split-window-below                  | O   |                     |
+| M-<kp-3>   |                                     | U   |                     |
+| M-<kp-4>   |                                     | U   |                     |
+| M-<kp-5>   | delete-other-windows                | O   |                     |
+| M-<kp-6>   | split-window-right                  | O   |                     |
+| M-<kp-7>   |                                     | U   |                     |
+| M-<kp-8>   |                                     | U   |                     |
+| M-<kp-9>   |                                     | U   |                     |
+| M-<kp-0>   |                                     | U   |                     |
+|            |                                     |     |                     |
+|------------+-------------------------------------+-----+---------------------|
+
+
+** Function Keys
+
+#+NAME: keydesc-fkeys
+|------+-----------------+-----+--------------------|
+| Key  | command         | Mod | old Emacs commands |
+|------+-----------------+-----+--------------------|
+| <f7> | flyspell-buffer |     |                    |
+| <f8> | quickrun        |     |                    |
+|      |                 |     |                    |
+|------+-----------------+-----+--------------------|
+
+* Prefix keys keybindings
+
+Remember:
+- *C-c* will became *C-d*
+- *C-x* will became *C-w*
+
+#+NAME: prefix-keymap  
+|-----------+----------------------------------------------------+-------|
+| Key       | Various                                            | Notes |
+|-----------+----------------------------------------------------+-------|
+|           |                                                    |       |
+| C-w g     | magit-status                                       |       |
+| C-w 1     | revert-to-two-windows                              |       |
+|           |                                                    |       |
+|           |                                                    |       |
+| C-d r     | eglot-rename                                       |       |
+| C-d <RET> | recentf                                            |       |
+|           |                                                    |       |
+| C-d C-n   | python-insert-docstring-with-google-style-at-point |       |
+|           |                                                    |       |
+| M-g g     | 'consult-goto-line                                 |       |
+|           |                                                    |       |
+|-----------+----------------------------------------------------+-------|
+
+* Customized keymaps
+
+Column *Func* (if present) will tell where the functions are defined:
+
+  + *OF* [[file:config.org::okkfunc-code ][okk functions]]
+  + *OK* *okk-keys* module in *site-lisp* 
+  + *SP* [[file:config.org::flyspell-code][spellchecking]]
+
+If notne is specified it should be a stock Emacs or package supplied function.
+
+** Abbrev
+
+#+NAME: keydesc-abbrev
+|-----------+------------------------------+-------|
+| Key       | Various                      | Notes |
+|-----------+------------------------------+-------|
+|           |                              |       |
+| C-w a e   | expand-abbrev                |       |
+| C-w a l   | list-abbrevs                 |       |
+| C-w a m   | edit-abbrev-file             |       |
+| C-w a n   | expand-jump-to-next-slot     |       |
+| C-w a p   | expand-jump-to-previous-slot |       |
+| C-w a r   | read-abbrev-file             |       |
+| C-w a w   | write-abbrev-file            |       |
+|           |                              |       |
+| C-w a a g | add-global-abbrev            |       |
+| C-w a a m | add-mode-abbrev              |       |
+| C-w a i g | inverse-add-global-abbrev    |       |
+| C-w a i m | inverse-add-mode-abbrev      |       |
+|           |                              |       |
+|-----------+------------------------------+-------|
+
+** Files
+
+#+NAME: keydesc-files
+|-----------+----------------------------------------------------+------+-------|
+| Key       | Various                                            | Func | Notes |
+|-----------+----------------------------------------------------+------+-------|
+|           |                                                    |      |       |
+| C-w f b   | okk-make-backup                                    | OF   |       |
+| C-w f c   | kill-this-buffer                                   |      |       |
+| C-w f i   | insert-file                                        |      |       |
+| C-w f n   | okk-new-empty-buffer                               | OK   |       |
+| C-w f o   | find-file                                          |      |       |
+| C-w f r   | revert-buffer                                      |      |       |
+| C-w f s   | save-buffer                                        |      |       |
+| C-w f t   | okk-tmpl-insert                                    |      |       |
+| C-w f t   | write-file                                         |      |       |
+|           |                                                    |      |       |
+|-----------+----------------------------------------------------+------+-------|
+
+** Search
+
+#+NAME: keydesc-search
+|-----------+----------------------------------------------------+------+-------|
+| Key       | Various                                            | Func | Notes |
+|-----------+----------------------------------------------------+------+-------|
+|           |                                                    |      |       |
+| C-w s r   | query-replace-regexp                               |      |       |
+| C-w s s   | query-replace                                      |      |       |
+|           |                                                    |      |       |
+|-----------+----------------------------------------------------+------+-------|
+
+** Consult
+
+#+NAME: keydesc-consult
+|---------+----------------------+-------|
+| Key     | Various              | Notes |
+|---------+----------------------+-------|
+|         |                      |       |
+| C-d c h | consult-history      |       |
+| C-d c l | consult-line         |       |
+| C-d c m | consult-mode-command |       |
+|         |                      |       |
+|---------+----------------------+-------|
+
+** Dictionary
+
+Defined in [[file:config.org::code-dict][dict-mode]]
+
+#+NAME: keydesc-dict
+|---------+------------------------------+-------|
+| Key     | Various                      | Notes |
+|---------+------------------------------+-------|
+|         |                              |       |
+| C-d d l | dictionary-lookup-definition |       |
+| C-d d m | dictionary-search            |       |
+| C-d d s | dictionary-match-words       |       |
+|         |                              |       |
+|---------+------------------------------+-------|
+
+** Denote
+
+Defined in [[file:config.org::code-denote][Packages denote]]
+
+#+NAME: keydesc-denote
+|---------+----------------------------------------------------+-------|
+| Key     | Various                                            | Notes |
+|---------+----------------------------------------------------+-------|
+|         |                                                    |       |
+| C-d n n | denote                                             |       |
+| C-d n d | denote-date                                        |       |
+| C-d n i | denote-link-or-create                              |       |
+| C-d n l | denote-find-link                                   |       |
+| C-d n b | denote-find-backlink                               |       |
+| C-d n D | denote-find-backlinkdenote-org-dblock-insert-links |       |
+| C-d n s | denote-rename-file-using-front-matter              |       |
+| C-d n k | denote-keywords-add                                |       |
+| C-d n K | denote-keywords-remove                             |       |
+|         |                                                    |       |
+|---------+----------------------------------------------------+-------|
+
+** Okk functions
+
+#+NAME: keydesc-okkfunc
+|---------+------------------------+------+-------|
+| Key     | Various                | Func | Notes |
+|---------+------------------------+------+-------|
+|         |                        |      |       |
+| C-d o a | okk-pers-agenda-open   | OF   |       |
+| C-d o c | org-capture            |      |       |
+| C-d o l | cycle-ispell-languages | SP   |       |
+| C-d o t | flyspell-toggle        | SP   |       |
+|         |                        |      |       |
+|---------+------------------------+------+-------|
+
+** Cape
+
+Defined in [[file:config.org::code-cape][Packages cape]]
+
+#+NAME: keydesc-cape
+|----------+----------------------------------------------+-------|
+| Key      | Various                                      | Notes |
+|----------+----------------------------------------------+-------|
+|          |                                              |       |
+| C-d p p  | completion-at-point ;; capf                  |       |
+| C-d p t  | complete-tag        ;; etags                 |       |
+| C-d p d  | cape-dabbrev        ;; or dabbrev-completion |       |
+| C-d p h  | cape-history                                 |       |
+| C-d p f  | cape-file                                    |       |
+| C-d p k  | cape-keyword                                 |       |
+| C-d p s  | cape-elisp-symbol                            |       |
+| C-d p e  | cape-elisp-block                             |       |
+| C-d p a  | cape-abbrev                                  |       |
+| C-d p l  | cape-line                                    |       |
+| C-d p w  | cape-dict                                    |       |
+| C-d p :  | cape-emoji                                   |       |
+| C-d p \\ | cape-tex                                     |       |
+| C-d p _  | cape-tex                                     |       |
+| C-d p ^  | cape-tex                                     |       |
+| C-d p &  | cape-sgml                                    |       |
+| C-d p r  | cape-rfc1345                                 |       |
+|          |                                              |       |
+|----------+----------------------------------------------+-------|
