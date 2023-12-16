@@ -13,6 +13,9 @@ _minted-config/
 init.elc
 config.el
 
+# service files
+clear-gh-hist.sh
+
 # Compiled Python bytecode
 *.py[cod]
 
