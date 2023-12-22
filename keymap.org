@@ -2,7 +2,7 @@
 #+TITLE: OKK Keymap
 #+AUTHOR: Carlo Dormeletti
 #+EMAIL: carlo.dormeletti@gmail.com
-#+DATE: Time-stamp: <2023-12-08 13:16:07 carlo-arch>
+#+DATE: Time-stamp: <2023-12-22 10:00:24 carlo-arch>
 
 * Non prefix keybindings
 
@@ -78,7 +78,7 @@ Mod content means:
 | C-<down>   | undefined                           | *   |                     |
 | C-<right>  | right-word                          |     |                     |
 | C-<up>     | undefined                           | *   |                     |
-| C-<return> | 'rectangle-mark-mode                | O   |                     |
+| C-<return> | rectangle-mark-mode                 | O   |                     |
 | C-<insert> | undefined                           | *   |                     |
 | C-<home>   | beginning-of-buffer                 |     |                     |
 | C-<prior>  | previous-buffer                     | O   | scroll-right        |

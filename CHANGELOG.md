@@ -28,3 +28,10 @@
     - New menu **Search** and altered **Edit** menu to resemble more "mundane editors".
     - Changed  in **personal.el** variable **okk-backup-exclude** to **okk-secret-dirs**.
     - Other tweaking in elisp code in **config.org** .
+  * **2023-12-18** Added some packages, various little improvements.
+    - Added **embark** to improve interaction.
+    - Deleted **multicursor** as I've not find it easy to use.
+    - Minor elisp code improvements.
+  * **2023-12-22** Major improvements:
+    - Corrected some error in lisp code.
+    - Added a function in **Org** to easily insert code block.
